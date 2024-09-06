@@ -1,26 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container" id="app">
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-between">
+        <!-- Use <router-link> para navegação -->
+        <router-link class="p-2 text-muted" to="/">Home</router-link>
+        <router-link class="p-2 text-muted" to="/ProductList">Produtos</router-link>
+        <router-link class="p-2 text-muted" to="/AboutPage">Sobre</router-link>
+      </nav> 
+      <ProductList msg="Produtos da Fake Store Api" />
+    </div>
+  
+    <!-- Renderiza o componente da rota atual -->
+    <router-view />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
